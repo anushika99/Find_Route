@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{#HTML to display first page for taking source and destination inputs#}
+
+<html>
+    <head>
+        <title>
+            USER
+        </title>
+    </head>
+
+    <style>
+    #h{
+        background-color:black;
+        width: 100%;
+        height:60%;
+        border: 1px solid black;
+    }
+    h1{
+        font-size: 4em;
+        color:white;
+        text-align: center;
+        /* margin-right: 150; */
+    }
+
+    #b{
+        text-align: center;
+        margin-left0: 30;
+    }
+    button {
+        background-color: #0a1a3b;
+        color: white;
+        font-family: "Arial";
+        font-size: 12px;
+
+    {#padding: 10 20 10 20;#}
+        width: 150px;
+        height: 30px;
+}
+    </style>
+    <body>
+        <section id="h">
+            <h1>FIND ROUTE</h1>
+        </section>
+
+        <section id="b">
+        <br>
+        <br>
+        <br>
+            <form action="/ShowRoutes" method="POST">
+                <p>
+                From  :
+                <select name ="start"  >
+                {% for i in input %}
+                <option value= "{{i}}" SELECTED>{{i}}</option>"
+                {% endfor %}
+                </select>
+                &nbsp;&nbsp;
+                To   :
+                <select name ="dest"  >
+                {% for i in input %}
+                <option value= "{{i}}" SELECTED>{{i}}</option>"
+                {% endfor %}
+                </select>
+                </p>
+{#            <p>#}
+{##}
+{#                From   :<input type="text" name="source" >  To  : <input type="text" name="dest">#}
+{#            </p>#}
+             <p>
+                 <input type = "submit" value = "OK" />
+             </p>
+            </form>
+
+        </section>
+    </body>
+</html>
